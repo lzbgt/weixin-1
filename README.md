@@ -9,4 +9,4 @@ or
 
 * docker run -v "$(pwd)":/myapp /myapp img-wxapp go build -v; ./myapp
 
-
+![ToyOfBruceLu](https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg)

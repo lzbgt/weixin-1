@@ -74,15 +74,8 @@ func Echo(w weixin.ResponseWriter, r *weixin.Request) {
     MenuHandler(r.Content, w.GetWeixin())   
 }
 
-
-var  artis = []weixin.Article{
-    {"我的近照","","http://103.27.109.177/images/thumb_head.jpg",""},
-}
-
 func ClickHandler(w weixin.ResponseWriter, r *weixin.Request) {
     switch r.EventKey {
-    case "MENU_KEY_RESUME":
-        w.ReplyNews(artis)
     case "MENU_KEY_CONTACT":
         w.ReplyText("联系人: 陆宗宝, 17092500181, weixin: 41552136\n本后台使用GO语言开发")
     default:
@@ -96,9 +89,13 @@ func ClickHandler(w weixin.ResponseWriter, r *weixin.Request) {
     }
 }
 
+var  artis = []weixin.Article{
+    {"欢迎关注","我的近照","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg"},
+}
+
 // 关注事件的处理函数
 func Subscribe(w weixin.ResponseWriter, r *weixin.Request) {
-	w.ReplyText("欢迎关注") // 有新人关注，返回欢迎消息
+	w.ReplyNews(artis) // 有新人关注，返回欢迎消息
 }
 
 func main() {
