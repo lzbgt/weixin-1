@@ -22,7 +22,7 @@ var menu_keys = []string{
 }
 
 var menu_cvs = []string{
-    "期待与能与您合作... TEL:17092500181",
+    "有意请拨 17092500181, 陆宗宝",
     "CALIX:\n参与CALIX EXA COMPASS项目的开发维护.\n" +"其核心是将传统的硬件管理软件向云端WEB迁移从而涉及一系列的开发和改造\n1)后台改造:开发系统API接口, 开发数据同步系统, 大规模并发改造\n2)开发WEB前端\n本人有幸参与了整个项目,期间接触了一系列的平台,工具和语言以及系统架构包括:SOAP, WEBSOCKET, REST, GO, C/C++, JAVA, SPRING, JBOSS, PERL, RUBY, NODE.JS, ZMQ",
     "MOTOROLA/NSN:\n主要负责WiMAX/LTE通信系统中BTS/AP的高可靠性软件开发: C/C++",
     "ZTE:\n主要负责BTS边界网关软件开发: C/C++",
@@ -33,7 +33,7 @@ func createMenu(wx *weixin.Weixin){
     menu := &weixin.Menu{make([]weixin.MenuButton, 2)}
     menu.Buttons[0].Name = "我的简历"
     menu.Buttons[0].SubButtons = make([]weixin.MenuButton, 4)
-    menu.Buttons[0].SubButtons[0].Name = "您的公司?"
+    menu.Buttons[0].SubButtons[0].Name = "XX公司?"
     menu.Buttons[0].SubButtons[0].Type = weixin.MenuButtonTypeKey
     menu.Buttons[0].SubButtons[0].Key = menu_keys[0]
     menu.Buttons[0].SubButtons[1].Name = "CALIX"
@@ -90,7 +90,7 @@ func ClickHandler(w weixin.ResponseWriter, r *weixin.Request) {
 }
 
 var  artis = []weixin.Article{
-    {"欢迎关注","我的近照","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg"},
+    {"你好!","我的近照","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg","https://raw.githubusercontent.com/lzbgt/weixin-1/master/images/getqrcode.jpg"},
 }
 
 // 关注事件的处理函数
