@@ -442,7 +442,10 @@ func (wx *Weixin) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "", http.StatusBadRequest)
 		} else {
 			wx.routeRequest(w, &msg)
-		}
+		}        
+        go func(){
+            log.Printf("%#v\n", msg)
+        }()
 	}
 	return
 }
